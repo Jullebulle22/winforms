@@ -33,7 +33,6 @@ namespace WinFormsApp2
             textBox3 = new TextBox();
             label1 = new Label();
             label2 = new Label();
-            label3 = new Label();
             SuspendLayout();
             //
             // textBox1
@@ -54,7 +53,7 @@ namespace WinFormsApp2
             //
             // textBox3
             //
-            textBox3.Location = new Point(329, 236);
+            textBox3.Location = new Point(329, 207);
             textBox3.Name = "textBox3";
             textBox3.ReadOnly = true;
             textBox3.Size = new Size(100, 23);
@@ -65,41 +64,31 @@ namespace WinFormsApp2
             label1.AutoSize = true;
             label1.Location = new Point(217, 114);
             label1.Name = "label1";
-            label1.Size = new Size(67, 15);
+            label1.Size = new Size(78, 15);
             label1.TabIndex = 3;
-            label1.Text = "Första talet:";
+            label1.Text = "Enter first nr:";
             //
             // label2
             //
             label2.AutoSize = true;
             label2.Location = new Point(441, 114);
             label2.Name = "label2";
-            label2.Size = new Size(67, 15);
+            label2.Size = new Size(95, 15);
             label2.TabIndex = 4;
-            label2.Text = "Andra talet:";
-            //
-            // label3
-            //
-            label3.AutoSize = true;
-            label3.Location = new Point(329, 218);
-            label3.Name = "label3";
-            label3.Size = new Size(43, 15);
-            label3.TabIndex = 5;
-            label3.Text = "Störst:";
+            label2.Text = "Enter second nr:";
             //
             // Form1
             //
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(textBox3);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Name = "Form1";
-            Text = "Uppgift 2 - Största talet";
+            Text = "Which Is Bigger?";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -111,6 +100,5 @@ namespace WinFormsApp2
         private TextBox textBox3;
         private Label label1;
         private Label label2;
-        private Label label3;
     }
 }
