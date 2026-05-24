@@ -77,7 +77,7 @@
             label1.Name = "label1";
             label1.Size = new Size(105, 15);
             label1.TabIndex = 4;
-            label1.Text = "Enter first number:";
+            label1.Text = "Enter first nr:";
             label1.Click += label1_Click;
             // 
             // label2
@@ -87,7 +87,7 @@
             label2.Name = "label2";
             label2.Size = new Size(123, 15);
             label2.TabIndex = 5;
-            label2.Text = "Enter second number:";
+            label2.Text = "Enter second nr:";
             // 
             // Form1
             // 
@@ -101,7 +101,7 @@
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Which Is Bigger?";
             ResumeLayout(false);
             PerformLayout();
         }
