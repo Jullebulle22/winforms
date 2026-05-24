@@ -9,8 +9,6 @@ namespace WinFormsApp2
 
         private void VisaStorsta()
         {
-            // Felhantering: TryParse kraschar inte om rutan är tom
-            // eller innehåller något som inte är ett heltal.
             bool ok1 = int.TryParse(textBox1.Text, out int tal1);
             bool ok2 = int.TryParse(textBox2.Text, out int tal2);
 
