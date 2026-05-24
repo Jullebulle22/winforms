@@ -2,22 +2,15 @@ namespace WinFormsApp7
 {
     public partial class Form1 : Form
     {
-        // Det forsta talet och vilket raknesatt som valts.
         private double forstaTal = 0;
         private string operation = "";
-
-        // Nar true ska nasta siffra starta en ny inmatning (skriva over displayen).
         private bool nyInmatning = true;
-
-        // Decimaltecken enligt datorns sprakinstallning (t.ex. "," i Sverige).
         private string dec = System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator;
 
         public Form1()
         {
             InitializeComponent();
         }
-
-        // ---- Hjalpmetoder som baade knappar och tangentbord anvander ----
 
         private void LaggTillSiffra(string siffra)
         {
@@ -68,14 +61,13 @@ namespace WinFormsApp7
             nyInmatning = true;
         }
 
-        // Laser av talet i displayen (anvander datorns sprakinstallning).
         private double LasTal()
         {
             double.TryParse(lblDisplay.Text, out double tal);
             return tal;
         }
 
-        private void NollstallAllt()        // C - rensa allt
+        private void NollstallAllt()
         {
             lblDisplay.Text = "0";
             lblHistorik.Text = "";
@@ -84,13 +76,13 @@ namespace WinFormsApp7
             nyInmatning = true;
         }
 
-        private void NollstallInmatning()   // CE - rensa bara displayen
+        private void NollstallInmatning()
         {
             lblDisplay.Text = "0";
             nyInmatning = true;
         }
 
-        private void RaderaSista()          // backsteg - sudda sista tecknet
+        private void RaderaSista()
         {
             if (nyInmatning) return;
             lblDisplay.Text = lblDisplay.Text.Substring(0, lblDisplay.Text.Length - 1);
@@ -101,7 +93,7 @@ namespace WinFormsApp7
             }
         }
 
-        private void VaxlaTecken()          // -/+ - byt mellan plus och minus
+        private void VaxlaTecken()
         {
             if (lblDisplay.Text.StartsWith("-"))
                 lblDisplay.Text = lblDisplay.Text.Substring(1);
@@ -109,16 +101,12 @@ namespace WinFormsApp7
                 lblDisplay.Text = "-" + lblDisplay.Text;
         }
 
-        // ---- Knapparnas Click-handelser ----
-
-        // Alla sifferknappar (0-9) delar pa denna metod.
         private void Siffra_Click(object sender, EventArgs e)
         {
             Button b = (Button)sender;
             LaggTillSiffra(b.Text);
         }
 
-        // Alla operatorknappar (+, -, x, /) delar pa denna metod.
         private void Operator_Click(object sender, EventArgs e)
         {
             Button b = (Button)sender;
@@ -132,7 +120,6 @@ namespace WinFormsApp7
         private void btnBack_Click(object sender, EventArgs e) { RaderaSista(); }
         private void btnSign_Click(object sender, EventArgs e) { VaxlaTecken(); }
 
-        // ---- Extra utmaning: gor sa att tangentbordet ocksa fungerar ----
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
             char c = e.KeyChar;
@@ -142,9 +129,9 @@ namespace WinFormsApp7
             else if (c == '-') ValjOperator("-");
             else if (c == '*') ValjOperator("x");
             else if (c == '/') ValjOperator("/");
-            else if (c == '\r' || c == '=') RaknaUt();   // Enter eller =
-            else if (c == '\b') RaderaSista();           // Backsteg
-            else if (c == (char)27) NollstallAllt();     // Esc
+            else if (c == '\r' || c == '=') RaknaUt();
+            else if (c == '\b') RaderaSista();
+            else if (c == (char)27) NollstallAllt();
             e.Handled = true;
         }
     }

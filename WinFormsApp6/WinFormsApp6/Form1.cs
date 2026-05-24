@@ -7,16 +7,14 @@ namespace WinFormsApp6
             InitializeComponent();
         }
 
-        // Raknar ut svaret beroende pa vilket raknetecken som valts.
         private void Berakna(char tecken)
         {
             bool ok1 = double.TryParse(txtTal1.Text, out double tal1);
             bool ok2 = double.TryParse(txtTal2.Text, out double tal2);
 
-            // Felhantering: om nagot tal inte gar att lasa visar vi ett meddelande.
             if (!ok1 || !ok2)
             {
-                txtResultat.Text = "Skriv två tal!";   // tva = tv[a-ring]
+                txtResultat.Text = "Skriv två tal!";
                 return;
             }
 
@@ -34,7 +32,6 @@ namespace WinFormsApp6
                 svar = tal1 / tal2;
             }
 
-            // Visar hela uttrycket, t.ex. 12-4=8
             txtResultat.Text = tal1 + tecken.ToString() + tal2 + "=" + svar;
         }
 
