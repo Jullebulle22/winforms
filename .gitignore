@@ -1,1 +1,35 @@
+# Claude Code
 .claude
+
+# Visual Studio / Rider IDE state
+.vs/
+.idea/
+
+# Build output
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+[Xx]64/
+[Xx]86/
+
+# Per-user project settings
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# .NET / NuGet
+project.lock.json
+project.fragment.lock.json
+artifacts/
+*.nupkg
+
+# Test / coverage results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# OS files
+Thumbs.db
+desktop.ini
+.DS_Store
